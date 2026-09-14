@@ -21,8 +21,8 @@
 /*---------------------------------------------------------------------------------------------*/
 #define  CS      12
 #define  SCK     18
-#define  MOSI    19
-#define  MISO    23
+#define  MOSI    23
+#define  MISO    19
 
 
 /*---------------------------------------------------------------------------------------------*/
@@ -101,8 +101,8 @@ void setup() {
     myUart.arducamUartBegin(115200);
     delay(1000);
     myUart.send_data_pack(7, "[INFO] Staring SPI..");
-    // SPI.begin(CS);
-    SPI.begin(SCK, MISO, MOSI);
+    SPI.begin(CS);
+    // SPI.begin(SCK, MISO, MOSI, CS);
     myUart.send_data_pack(7, "[INFO] Staring Camera..");
     myCAM.begin();
     myUart.send_data_pack(8, "[INFO] Mega Initialized!");
